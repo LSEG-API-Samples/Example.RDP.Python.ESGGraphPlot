@@ -306,3 +306,4 @@ You can change or modify Python codes in the notebook to displaying data from ot
 
 ## DOWNLOADS
 * [ESGGraphPlot.ipynb on GitHub](https://github.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot)
+* [![Azure Notebooks](https://notebooks.azure.com/launch.svg)](https://notebooks.azure.com/moragodkrit/projects/esggraphplot)
