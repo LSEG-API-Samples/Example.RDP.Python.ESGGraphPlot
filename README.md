@@ -173,9 +173,9 @@ dataPlot.plot(x='Period End Date',y=['ESG Score','ESG Combined Score','Innovatio
 ```
 It will be displaying the following sample graphs on the Jupyter Notebook.
 
-![MSFT Score Line Graph](./linegraphmsft.png)
+![MSFT Score Line Graph](https://raw.githubusercontent.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot/master/images/linegraphmsft.png)
 
-![MSFT Score Bar Graph](./bargraphmsft.png)
+![MSFT Score Bar Graph](https://raw.githubusercontent.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot/master/images/bargraphmsft.png)
 
 ### Compare ESG Score for multiple universe
 
@@ -288,11 +288,11 @@ df2.plot.barh(y='CO2 Emission Total',color=(0.5, 0.25, 0.15, 1))
 It will shows the following horizontal bar chart on Jupyter Notebook.
 
 
-![Woman Manager Barh Chart](./barhwomanmanager.png)
+![Woman Manager Barh Chart](https://raw.githubusercontent.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot/master/images/barhwomanmanager.png)
 
 It looks like currently we do not have the report for IBM.
 
-![CO2 Barh Chart](./barhco2.png)
+![CO2 Barh Chart](https://raw.githubusercontent.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot/master/images/barhco2.png)
 
 Based on the data returned by the API, currently we do not have a CO2 report Amazon.
 
@@ -305,4 +305,4 @@ You can change or modify Python codes in the notebook to displaying data from ot
 * [ESG User Guide](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis/docs?content=62652&type=documentation_item)
 
 ## DOWNLOADS
-* Github
+* [ESGGraphPlot.ipynb on GitHub](https://github.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot)
