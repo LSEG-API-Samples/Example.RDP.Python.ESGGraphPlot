@@ -1,6 +1,6 @@
 # Using EDP API to request ESG data on Jupyter Notebook
 
-##INTRODUCTION
+## INTRODUCTION
 
 Environmental, Social and Governance (ESG) is a set of standards for a company's operations that investors use to evaluate corporate behavior, determine the future financial performance and decide whether it will be beneficial to invest in a company or not. The ESG information from Refinitv enables our clients to benchmark, compare and integrate extra-financial information into their investment processes to identify companies with quality management and reduced risk exposure. Please refer to the [ESG Learning Section](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis/learning?content=62732&type=learning_material_item) on the [Developer Community](https://developers.refinitiv.com/) for more details about the ESG data and its coverage provided by Refinitiv.
 
