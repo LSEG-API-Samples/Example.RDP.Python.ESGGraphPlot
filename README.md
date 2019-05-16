@@ -179,7 +179,7 @@ It will be displaying the following sample graphs on the Jupyter Notebook.
 
 ### Compare ESG Score for multiple universe
 
-The next step, I'm interested in comparing the value of a number of Woman Manager and CO2 Emission Total used by a top tech company such as Microsoft, IBM, Facebook, Google/Alphabet, and Amazon. 
+For the new scenario, I'm interested in comparing the value of a number of Woman Manager and CO2 Emission Total used by a top tech company such as Microsoft, IBM, Facebook, Google/Alphabet, and Amazon. 
 
 Based on the details from EDP Swagger page,  we can get the data using basic score endpoint and we just need to pass a list of RIC for each company as a universe parameters. Below are a snippet of codes to demonstrate the API usage.
 
@@ -275,7 +275,7 @@ for val in instrument:
 
 ```
 
-The last step we construct dataframe for plotting the graph for displaying a data for **CO2 Emission Total** with a **Woman Managers** separately because of the difference between the scale of each data. We will be using the company name as an index.
+The last step we construct dataframe for plotting the graph for displaying data for **CO2 Emission Total** with a **Woman Managers** separately because of the difference between the scale of each data. We will be using the company name as an index.
 
 ```python
 df1 = pd.DataFrame({"Woman Managers":woman}, index=instrumentorg)
