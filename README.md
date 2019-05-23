@@ -123,7 +123,8 @@ for header in headers:
 
 dataArray=np.array(esg_object['data'])
 df=pd.DataFrame(data=dataArray,columns=titles)
-print(df)
+if df.empty is False:
+    print(df)
 ```
 It should return the data like the following sample output.
 
@@ -203,7 +204,8 @@ for header in headers:
 
 basicDataArray=np.array(esg_BasicObject['data'])
 basicDf=pd.DataFrame(data=basicDataArray,columns=titles)
-print(basicDf)
+if basicDf.empty is False:
+    print(basicDf)
 
 ```
 It will show the following result.
@@ -232,13 +234,21 @@ if resp.status_code!=200:
 esg_universe = loads(resp.text)
 
 def GetRicName(ricName):
-    universe_data = [sublist for sublist in esg_universe['data'] if sublist[1]==ricName] 
-    #print(universe_data)
-    if universe_data:
-        return universe_data[0][2]
+    if 'data' in esg_universe:
+        universe_data = [sublist for sublist in esg_universe['data'] if sublist[1]==ricName] 
+        #print(universe_data)
+        if universe_data:
+            return universe_data[0][2]
     return None
 
-print(GetRicName("MSFT.O"))
+if GetRicName('MSFT.O') is not None:
+    print("MSFT.O is \""+ GetRicName("MSFT.O")+"\"")
+else:
+    print("Unable to find name for MSFT.O")
+```
+Output
+```
+MSFT.O is "Microsoft Corp"
 ```
 
 Next step we will be using the data from a **basicDf** dataframe to plot horizontal bar chart for comparing a **Woman Managers** and **CO2 Emission Total** from each company. Base on a result from a dataframe, we found that column number 5 is a data for "**CO2 Equivalents Emission Total**" and column number 6 is a data for "**Women Managers**", then we will use the index to extract the data. Below are the codes we use to extract both data from the data frame.
@@ -290,11 +300,11 @@ It will shows the following horizontal bar chart on Jupyter Notebook.
 
 ![Woman Manager Barh Chart](https://raw.githubusercontent.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot/master/images/barhwomanmanager.png)
 
-It looks like currently we do not have the report for IBM.
+Base on the data, we do not have the report for IBM so it does not have the graph for IBM.
 
 ![CO2 Barh Chart](https://raw.githubusercontent.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot/master/images/barhco2.png)
 
-Based on the data returned by the API, currently we do not have a CO2 report Amazon.
+Based on the data, currently we do not have a CO2 report for Amazon.
 
 You can change or modify Python codes in the notebook to displaying data from other columns of the dataframe for basic or full ESG Score. 
 
