@@ -51,14 +51,20 @@ if resp.status_code!=200:
     exit()
     
 esg_universe = loads(resp.text)
+
 def GetRicName(ricName):
-    universe_data = [sublist for sublist in esg_universe['data'] if sublist[1]==ricName] 
-    #print(universe_data)
-    if universe_data:
-        return universe_data[0][2]
+    if 'data' in esg_universe:
+        universe_data = [sublist for sublist in esg_universe['data'] if sublist[1]==ricName] 
+        #print(universe_data)
+        if universe_data:
+            return universe_data[0][2]
     return None
 
-print("Company Name for MSFT.O is " + GetRicName("MSFT.O"))
+if GetRicName('MSFT.O') is not None:
+    print("MSFT.O is \""+ GetRicName("MSFT.O")+"\"")
+else:
+    print("Unable to find name for MSFT.O")
+    
 ricList="MSFT.O"
 esgScoreFullEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v1/views/scores-full?universe="
 resp=get(url=esgScoreFullEndpoint+ricList,headers={"Authorization": "Bearer " + accessToken})
@@ -72,11 +78,9 @@ esg_object=loads(resp.text)
 import pandas as pd
 import numpy as np
 headers=esg_object['headers']
-titles=np.array([])
 
-for header in headers:
-    titles=np.append(titles,header['title'])
-
+#Get column headers/titles using lambda
+titles=map(lambda header:header['title'], headers)
 dataArray=np.array(esg_object['data'])
 df=pd.DataFrame(data=dataArray,columns=titles)
 print(df)
@@ -104,14 +108,16 @@ esg_BasicObject=loads(resp.text)
 import pandas as pd
 import numpy as np
 headers=esg_BasicObject['headers']
-titles=np.array([])
 
-for header in headers:
-    titles=np.append(titles,header['title'])
+#Get column headers/titles using lambda
+titles=map(lambda header:header['title'], headers)
 
 basicDataArray=np.array(esg_BasicObject['data'])
 basicDf=pd.DataFrame(data=basicDataArray,columns=titles)
-print(basicDf)
+
+if basicDf.empty is False:
+    print(basicDf)
+
 
 co2= [val for sublist in np.array(basicDf.iloc[:,5:6]) for val in sublist]
 woman=[val for sublist in np.array(basicDf.iloc[:,6:7]) for val in sublist] 

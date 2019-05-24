@@ -116,10 +116,8 @@ To process the ESG data, we need to convert the data from JSON object to a panda
 import pandas as pd
 import numpy as np
 headers=esg_object['headers']
-titles=np.array([])
-
-for header in headers:
-    titles=np.append(titles,header['title'])
+#Get column headers/titles using lambda
+titles=map(lambda header:header['title'], headers)
 
 dataArray=np.array(esg_object['data'])
 df=pd.DataFrame(data=dataArray,columns=titles)
@@ -194,16 +192,14 @@ if resp.status_code!=200:
 
 esg_BasicObject=loads(resp.text)
 
-import pandas as pd
-import numpy as np
 headers=esg_BasicObject['headers']
-titles=np.array([])
 
-for header in headers:
-    titles=np.append(titles,header['title'])
+#Get column headers/titles using lambda
+titles=map(lambda header:header['title'], headers)
 
 basicDataArray=np.array(esg_BasicObject['data'])
 basicDf=pd.DataFrame(data=basicDataArray,columns=titles)
+
 if basicDf.empty is False:
     print(basicDf)
 
