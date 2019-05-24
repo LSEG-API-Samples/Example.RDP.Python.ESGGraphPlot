@@ -231,11 +231,11 @@ esg_universe = loads(resp.text)
 
 def GetRicName(ricName):
     if 'data' in esg_universe:
-        universe_data = [sublist for sublist in esg_universe['data'] if sublist[1]==ricName] 
-        #print(universe_data)
-        if universe_data:
-            return universe_data[0][2]
+        searchItem = list(filter(lambda data: data[1]==ricName, list(esg_universe['data'])))
+        if len(searchItem)>0:
+            return searchItem[0][2]
     return None
+
 
 if GetRicName('MSFT.O') is not None:
     print("MSFT.O is \""+ GetRicName("MSFT.O")+"\"")
