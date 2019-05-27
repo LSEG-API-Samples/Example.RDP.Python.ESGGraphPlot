@@ -84,7 +84,7 @@ else:
 print("Refresh Token:",refreshToken)
 print("Access Token:",accessToken)
 ```
-### Retreive ESG score
+### Retrieve ESG score
 
 In this example, we want to retrieve the ESG Score standard. The score standard operation returns all available scores for a company with three years of historical data. Application has to use the following Endpoint to retrieve the data.
 
@@ -215,7 +215,7 @@ Instrument	Period End Date	ESG Reporting Scope	ESG Report Auditor Name	ESG Perio
 4	MSFT.O	2017-06-30	100	None	2019-04-19T00:00:00	2790348	19.1	None
 ```
 
-__Display Componay Name__
+__Display Company Name__
 
 We have an additional requirement to display Company Name rather than using RIC codes. Basically, the data returned by the ESG basic score has only an Instrument name but it does not have a company named. Therefore, I need to create a function for getting the company name from ESG universe data. I found that the ESG universe endpoint can provide the company names that I want. I will use it later when I plot the graph. Anyway, we found that we can't find some RIC code using the universe Endpoint so it will return the original RIC name instead.
 
