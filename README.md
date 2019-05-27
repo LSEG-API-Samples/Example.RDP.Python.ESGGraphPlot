@@ -32,6 +32,7 @@ The application will use getpass to get the username and password from the user.
 import getpass as gp
 
 username=input('Enter EDP username:')
+clientid=input('Enter client id/app id:')
 password=gp.getpass('Enter EDP Password:')
 ```
 
@@ -55,6 +56,7 @@ if refreshToken is None:
     _params={
         "username": username,
         "password": password,
+        "client_id": clientid,
         "grant_type": "password",
         "scope": "trapi",
         "takeExclusiveSignOnControl": "true"
@@ -285,10 +287,10 @@ The last step we construct dataframe for plotting the graph for displaying data 
 
 ```python
 df1 = pd.DataFrame({"Woman Managers":woman}, index=instrumentorg)
-df1.plot.barh(y='Woman Managers')
+df1.plot.barh(y='Woman Managers',figsize=(14,7))
 
 df2 = pd.DataFrame({"CO2 Emission Total":co2}, index=instrumentorg)
-plt=df2.plot.barh(y='CO2 Emission Total',color=(0.5, 0.25, 0.15, 1))
+plt=df2.plot.barh(y='CO2 Emission Total',color=(0.5, 0.25, 0.15, 1),figsize=(14,7))
 plt.set_xlabel('(tonnes)')
 ```
 
