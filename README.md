@@ -155,7 +155,7 @@ For this example, we want to compare columns "ESG Score","ESG Combined Score" an
 ```python
 dataPlot=pd.DataFrame(df,columns=['Instrument','Period End Date','ESG Score','ESG Combined Score','Innovation Score'])
 ```
-The data for the Y-axis is a Period End Date and the X-axis is the ESG scores. We want to display only the year (eg "2017", "2016") therefore we need to reformat the data in "Period End Date" column using below codes. The example also sorting the year ascending. 
+The data for the X-axis is a Period End Date and the Y-axis is the ESG scores. And we want to display only the year (eg "2017", "2016") therefore we need to reformat the data in "Period End Date" column using below codes. The example also sorting the year ascending. 
 
 Note that you can change the column in dataPlot to plot the graph for specific data you want. If you have permission to request only a basic score you might need to change the column accordingly.
 
@@ -288,7 +288,8 @@ df1 = pd.DataFrame({"Woman Managers":woman}, index=instrumentorg)
 df1.plot.barh(y='Woman Managers')
 
 df2 = pd.DataFrame({"CO2 Emission Total":co2}, index=instrumentorg)
-df2.plot.barh(y='CO2 Emission Total',color=(0.5, 0.25, 0.15, 1))
+plt=df2.plot.barh(y='CO2 Emission Total',color=(0.5, 0.25, 0.15, 1))
+plt.set_xlabel('(tonnes)')
 ```
 
 It will shows the following horizontal bar chart on Jupyter Notebook.
