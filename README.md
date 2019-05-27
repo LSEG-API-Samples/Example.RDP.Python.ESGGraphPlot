@@ -13,7 +13,7 @@ The Jupyter Notebook with Python codes will be provided on GitHub.
 * Python 3.6 or later version.
 * Required Python Packages: getpass, json, requests, pandas, numpy, mathplotlib.
 * [Jupyter Notebook](https://jupyter.org/install). You can install Jupyter Notebook on your local machine and then test the example on the machine. The alternate choice is a free Jupyter Notebook on cloud environment such as [Azure Notebook](https://notebooks.azure.com/) provided by Microsoft. You can find more details from [this tutorial](https://docs.microsoft.com/en-us/azure/notebooks/tutorial-create-run-jupyter-notebook). If you are not familiar with Jupyter Notebook, the following [tutorial](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook?utm_source=adwords_ppc&utm_campaignid=1455363063&utm_adgroupid=65083631748&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=1t1&utm_creative=332602034364&utm_targetid=aud-748597547652:dsa-473406581035&utm_loc_interest_ms=&utm_loc_physical_ms=1012728&gclid=CjwKCAjwiZnnBRBQEiwAcWKfYtOonT1GbauG4cpg4BYnMowI6EOcYxUAUTz_ywny2KjyBchUeULgGxoCkoEQAvD_BwE) created by DataCamp may help.
-* EDP account with permission to access ESG basic or professional data. 
+* EDP account with permission to access ESG basic or higher level. 
 
 ## Implementation
 
