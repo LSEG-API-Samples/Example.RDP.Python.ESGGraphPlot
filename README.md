@@ -1,19 +1,19 @@
 # Using EDP API to request ESG data on Jupyter Notebook
 
-## INTRODUCTION
+## Introduction
 
-Environmental, Social and Governance (ESG) is a set of standards for a company's operations that investors use to evaluate corporate behavior, determine the future financial performance and decide whether it will be beneficial to invest in a company or not. The ESG information from Refinitv enables our clients to benchmark, compare and integrate extra-financial information into their investment processes to identify companies with quality management and reduced risk exposure. Please refer to the [ESG Learning Section](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis/learning?content=62732&type=learning_material_item) on the [Developer Community](https://developers.refinitiv.com/) for more details about the ESG data and its coverage provided by Refinitiv.
+Environmental, Social and Governance (ESG) is a set of standards for a company's operations that investors use to evaluate corporate behavior, determine the future financial performance and decide whether it will be beneficial to invest in a company or not. The ESG information from Refinitiv enables our clients to benchmark, compare and integrate extra-financial information into their investment processes to identify companies with quality management and reduced risk exposure. Please refer to the [ESG Learning Section](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis/learning?content=62732&type=learning_material_item) on the [Developer Community](https://developers.refinitiv.com/) for more details about the ESG data and its coverage provided by Refinitiv.
 
 This example will demonstrate how we can retrieve [ESG data](https://developers.refinitiv.com/content/edp-esg-quick-start-video) from [Elektron Data Platform (EDP)](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis). We will be using Python with EDP API to request ESG data on the [Jupyter Notebook](https://jupyter.org/index.html). The notebook allows the user to create and share documents that contain live code, narrative text, visualizations and we can also plot the graph on the notebook.
 
 The Jupyter Notebook with Python codes will be provided on GitHub.
 
-## Pre-requisites:
+## Pre-requisites
 
 * Python 3.6 or later version.
-* Required Python Packages: getpass, json, requests, pandas, numpy, matplotlib.
-* [Jupyter Notebook](https://jupyter.org/install). You can install Jupyter Notebook on your local machine and then test the example on the machine. Alternate choice is a free Juputer Notebook on cloud environment such as [Azure Notebook](https://notebooks.azure.com/) provided by Microsoft. You can find more details from [this tutorial](https://docs.microsoft.com/en-us/azure/notebooks/tutorial-create-run-jupyter-notebook). If you are not familiar with Jupyter Notebook, the following [tutorial](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook?utm_source=adwords_ppc&utm_campaignid=1455363063&utm_adgroupid=65083631748&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=1t1&utm_creative=332602034364&utm_targetid=aud-748597547652:dsa-473406581035&utm_loc_interest_ms=&utm_loc_physical_ms=1012728&gclid=CjwKCAjwiZnnBRBQEiwAcWKfYtOonT1GbauG4cpg4BYnMowI6EOcYxUAUTz_ywny2KjyBchUeULgGxoCkoEQAvD_BwE) created by DataCamp may help.
-* EDP account with a permission to access ESG basic or premium data. 
+* Required Python Packages: getpass, json, requests, pandas, numpy, mathplotlib.
+* [Jupyter Notebook](https://jupyter.org/install). You can install Jupyter Notebook on your local machine and then test the example on the machine. The alternate choice is a free Jupyter Notebook on cloud environment such as [Azure Notebook](https://notebooks.azure.com/) provided by Microsoft. You can find more details from [this tutorial](https://docs.microsoft.com/en-us/azure/notebooks/tutorial-create-run-jupyter-notebook). If you are not familiar with Jupyter Notebook, the following [tutorial](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook?utm_source=adwords_ppc&utm_campaignid=1455363063&utm_adgroupid=65083631748&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=1t1&utm_creative=332602034364&utm_targetid=aud-748597547652:dsa-473406581035&utm_loc_interest_ms=&utm_loc_physical_ms=1012728&gclid=CjwKCAjwiZnnBRBQEiwAcWKfYtOonT1GbauG4cpg4BYnMowI6EOcYxUAUTz_ywny2KjyBchUeULgGxoCkoEQAvD_BwE) created by DataCamp may help.
+* EDP account with permission to access ESG basic or premium data. 
 
 ## Implementation
 
@@ -112,7 +112,7 @@ if resp.status_code!=200:
 
 esg_object=loads(resp.text)
 ```
-To process the ESG data, we need to convert the data from JSON object to a pandas data frame. The application need to get the data and column name from JSON object and then re-construct a new dataframe. The applicaiton need to converts the title from a header to numpy arrary and convert data array to numpy array as well. 
+To process the ESG data, we need to convert the data from the JSON object to a pandas data frame. The application needs to get the data and column name from the JSON object and then reconstruct a new dataframe. It has to convert the title from a header to numpy array and convert data array to numpy array as well.
 
 ```python
 import pandas as pd
@@ -152,7 +152,7 @@ It should return the data like the following sample output.
 
 To compare specific ESG data between the years, Jupyter Notebook user may use the mathplotlib to plot the graph.
 
-For this example, we want to compare columns "ESG Score","ESG Combined Score" and "Innovation Score" between the years. I have to create a new data frame from the origina data frame df using the following codes.
+For this example, we want to compare columns "ESG Score", "ESG Combined Score" and "Innovation Score" between the years. I have to create a new data frame from the original data frame df using the following codes.
 
 ```python
 dataPlot=pd.DataFrame(df,columns=['Instrument','Period End Date','ESG Score','ESG Combined Score','Innovation Score'])
@@ -178,7 +178,7 @@ It will be displaying the following sample graphs on the Jupyter Notebook.
 
 ![MSFT Score Bar Graph](https://raw.githubusercontent.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot/master/images/bargraphmsft.png)
 
-### Compare ESG Score for multiple universe
+### Compare ESG Score for multiple universes
 
 For the new scenario, I'm interested in comparing the value of a number of Woman Manager and CO2 Emission Total used by a top tech company such as Microsoft, IBM, Facebook, Google/Alphabet, and Amazon. 
 
@@ -283,7 +283,7 @@ for val in instrument:
 
 ```
 
-The last step we construct dataframe for plotting the graph for displaying data for **CO2 Emission Total** with a **Woman Managers** separately because of the difference between the scale of each data. We will be using the company name as an index.
+The last step we construct dataframe for plotting the graph for displaying data for **CO2 Emission Total** with **Woman Managers** separately because of the difference between the scale of each data. We will be using the company name as an index.
 
 ```python
 df1 = pd.DataFrame({"Woman Managers":woman}, index=instrumentorg)
