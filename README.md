@@ -283,7 +283,7 @@ for val in instrument:
 
 ```
 
-The last step we construct dataframe for plotting the graph for displaying data for **CO2 Emission Total** with **Woman Managers** separately because of the difference between the scale of each data. We will be using the company name as an index.
+The last step we construct dataframe for plotting the graph for displaying data for **CO2 Emission Total** with **Woman Managers**  separately because of the difference between the scale of each data. We will be using the company name as an index.
 
 ```python
 df1 = pd.DataFrame({"Woman Managers":woman}, index=instrumentorg)
