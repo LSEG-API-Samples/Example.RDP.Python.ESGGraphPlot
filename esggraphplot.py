@@ -1,6 +1,7 @@
 import getpass as gp
 
 username=input('Enter EDP username:')
+clientid=input('Enter client id/app id:')
 password=gp.getpass('Enter EDP Password:')
 
 from json import dumps, loads, load
@@ -18,6 +19,7 @@ if refreshToken is None:
     _params={
         "username": username,
         "password": password,
+        "client_id": clientid,
         "grant_type": "password",
         "scope": "trapi",
         "takeExclusiveSignOnControl": "true"
@@ -30,7 +32,6 @@ else:
     }
 
 resp=post(url=getTokenEndpoint,data=_params,headers=_header,auth=(username,""))
-
 if resp.status_code!=200:
     print("Status Code:",resp.status_code," Text:",dumps(loads(resp.text),indent=4))
     exit()
