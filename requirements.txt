@@ -1,4 +1,3 @@
-getpass
 json
 requests 
 numpy==1.16.*
