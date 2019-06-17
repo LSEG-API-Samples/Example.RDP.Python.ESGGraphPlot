@@ -1,5 +1,3 @@
-json
-requests 
 numpy==1.16.*
 matplotlib==3.*
 pandas
