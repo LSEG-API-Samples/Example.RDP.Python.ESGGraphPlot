@@ -1,10 +1,10 @@
-# Using EDP API to request ESG data on Jupyter Notebook
+# Using RDP API to request ESG data on Jupyter Notebook
 
 ## Introduction
 
 Environmental, Social and Governance (ESG) is a set of standards for a company's operations that investors use to evaluate corporate behavior, determine the future financial performance and decide whether it will be beneficial to invest in a company or not. The ESG information from Refinitiv enables our clients to benchmark, compare and integrate extra-financial information into their investment processes to identify companies with quality management and reduced risk exposure. Please refer to the [ESG Learning Section](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning?content=62732&type=learning_material_item) on the [Developer Community](https://developers.refinitiv.com/) for more details about the ESG data and its coverage provided by Refinitiv.
 
-This example will demonstrate how we can retrieve [ESG data](https://developers.refinitiv.com/content/edp-esg-quick-start-video) from [Refinitiv Data Platform (RDP)](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning?content=62732&type=learning_material_item). We will be using Python with EDP API to request ESG data on the [Jupyter Notebook](https://jupyter.org/index.html). The notebook allows the user to create and share documents that contain live code, narrative text, visualizations and we can also plot the graph on the notebook.
+This example will demonstrate how we can retrieve [ESG data](https://developers.refinitiv.com/content/edp-esg-quick-start-video) from [Refinitiv Data Platform (RDP)](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning?content=62732&type=learning_material_item). We will be using Python with RDP API to request ESG data on the [Jupyter Notebook](https://jupyter.org/index.html). The notebook allows the user to create and share documents that contain live code, narrative text, visualizations and we can also plot the graph on the notebook.
 
 The Jupyter Notebook with Python codes will be provided on GitHub.
 
@@ -13,38 +13,38 @@ The Jupyter Notebook with Python codes will be provided on GitHub.
 * Python 3.6 or later version.
 * Required Python Packages: getpass, json, requests, pandas, numpy, mathplotlib.
 * [Jupyter Notebook](https://jupyter.org/install). You can install Jupyter Notebook on your local machine and then test the example on the machine. The alternate choice is a free Jupyter Notebook on cloud environment such as [Azure Notebook](https://notebooks.azure.com/) provided by Microsoft. You can find more details from [this tutorial](https://docs.microsoft.com/en-us/azure/notebooks/tutorial-create-run-jupyter-notebook). If you are not familiar with Jupyter Notebook, the following [tutorial](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook?utm_source=adwords_ppc&utm_campaignid=1455363063&utm_adgroupid=65083631748&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=1t1&utm_creative=332602034364&utm_targetid=aud-748597547652:dsa-473406581035&utm_loc_interest_ms=&utm_loc_physical_ms=1012728&gclid=CjwKCAjwiZnnBRBQEiwAcWKfYtOonT1GbauG4cpg4BYnMowI6EOcYxUAUTz_ywny2KjyBchUeULgGxoCkoEQAvD_BwE) created by DataCamp may help.
-* EDP account with permission to access ESG basic or higher level. 
+* RDP account with permission to access ESG basic or higher level. 
 
 ## Implementation
 
-There are two main steps for the implementation according to [the tutorial](https://developers.refinitiv.com/EDP-data-platform/EDP-data-platform-apis/learning?content=62732&type=learning_material_item).
-* Get Access Token from EDP Authentication Endpoint.
+There are two main steps for the implementation according to [the tutorial](https://developers.refinitiv.com/RDP-data-platform/EDP-data-platform-apis/learning?content=62732&type=learning_material_item).
+* Get Access Token from RDP Authentication Endpoint.
 * Get specific ESG data like the basic score from the REST endpoint. 
 * Display data and plot a graph.
 
 ### Get Access Token
 
-__Get EDP Username and Password__
+__Get RDP Username and Password__
 
 The application will use getpass to get the username and password from the user.
 
 ```python
 import getpass as gp
 
-username=input('Enter EDP username:')
+username=input('Enter RDP username:')
 clientid=input('Enter client id/app id:')
-password=gp.getpass('Enter EDP Password:')
+password=gp.getpass('Enter RDP Password:')
 ```
 
 __Get access token from authentication endpoint__
 
-The application sends HTTP post with required parameters according to the [RDP tutorial](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning?content=62732&type=learning_material_item/learning?content=38562&type=learning_material_item) to get the Access Token from EDP server.
+The application sends HTTP post with required parameters according to the [RDP tutorial](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning?content=62732&type=learning_material_item/learning?content=38562&type=learning_material_item) to get the Access Token from RDP server.
 
 ```python
 from json import dumps, loads, load
 from requests import post,get
 
-#Get access token from EDP server 
+#Get access token from RDP server 
 getTokenEndpoint="https://api.refinitiv.com/auth/oauth2/v1/token"
 refreshToken=None
 accessToken=None
@@ -182,7 +182,7 @@ It will be displaying the following sample graphs on the Jupyter Notebook.
 
 For the new scenario, I'm interested in comparing the value of a number of Woman Manager and CO2 Emission Total used by a top tech company such as Microsoft, IBM, Facebook, Google/Alphabet, and Amazon. 
 
-Based on the details from EDP Swagger page,  we can get the data using basic score endpoint and we just need to pass a list of RIC for each company as a universe parameters. Below are a snippet of codes to demonstrate the API usage.
+Based on the details from RDP Swagger page,  we can get the data using basic score endpoint and we just need to pass a list of RIC for each company as a universe parameters. Below are a snippet of codes to demonstrate the API usage.
 
 ```python
 ricList="IBM,AMZN.O,MSFT.O,GOOGL.O,FB.O,APPL.O"
@@ -297,11 +297,11 @@ plt.set_xlabel('(tonnes)')
 It will shows the following horizontal bar chart on Jupyter Notebook.
 
 
-![Woman Manager Barh Chart](https://raw.githubusercontent.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot/master/images/barhwomanmanager.png)
+![Woman Manager Barh Chart](https://raw.githubusercontent.com/TR-API-Samples/Example.RDP.Python.ESGGraphPlot/master/images/barhwomanmanager.png)
 
 Base on the data, we do not have the report for IBM so it does not have the graph for IBM.
 
-![CO2 Barh Chart](https://raw.githubusercontent.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot/master/images/barhco2.png)
+![CO2 Barh Chart](https://raw.githubusercontent.com/TR-API-Samples/Example.RDP.Python.ESGGraphPlot/master/images/barhco2.png)
 
 Based on the data, currently we do not have a CO2 report for Amazon.
 
