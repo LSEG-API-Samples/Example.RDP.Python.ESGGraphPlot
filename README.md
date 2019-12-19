@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Environmental, Social and Governance (ESG) is a set of standards for a company's operations that investors use to evaluate corporate behavior, determine the future financial performance and decide whether it will be beneficial to invest in a company or not. The ESG information from Refinitiv enables our clients to benchmark, compare and integrate extra-financial information into their investment processes to identify companies with quality management and reduced risk exposure. Please refer to the [ESG Learning Section](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis/learning?content=62732&type=learning_material_item) on the [Developer Community](https://developers.refinitiv.com/) for more details about the ESG data and its coverage provided by Refinitiv.
+Environmental, Social and Governance (ESG) is a set of standards for a company's operations that investors use to evaluate corporate behavior, determine the future financial performance and decide whether it will be beneficial to invest in a company or not. The ESG information from Refinitiv enables our clients to benchmark, compare and integrate extra-financial information into their investment processes to identify companies with quality management and reduced risk exposure. Please refer to the [ESG Learning Section](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning?content=62732&type=learning_material_item) on the [Developer Community](https://developers.refinitiv.com/) for more details about the ESG data and its coverage provided by Refinitiv.
 
-This example will demonstrate how we can retrieve [ESG data](https://developers.refinitiv.com/content/edp-esg-quick-start-video) from [Elektron Data Platform (EDP)](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis). We will be using Python with EDP API to request ESG data on the [Jupyter Notebook](https://jupyter.org/index.html). The notebook allows the user to create and share documents that contain live code, narrative text, visualizations and we can also plot the graph on the notebook.
+This example will demonstrate how we can retrieve [ESG data](https://developers.refinitiv.com/content/edp-esg-quick-start-video) from [Refinitiv Data Platform (RDP)](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning?content=62732&type=learning_material_item). We will be using Python with EDP API to request ESG data on the [Jupyter Notebook](https://jupyter.org/index.html). The notebook allows the user to create and share documents that contain live code, narrative text, visualizations and we can also plot the graph on the notebook.
 
 The Jupyter Notebook with Python codes will be provided on GitHub.
 
@@ -17,7 +17,7 @@ The Jupyter Notebook with Python codes will be provided on GitHub.
 
 ## Implementation
 
-There are two main steps for the implementation according to [the tutorial](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis/learning?content=62732&type=learning_material_item).
+There are two main steps for the implementation according to [the tutorial](https://developers.refinitiv.com/EDP-data-platform/EDP-data-platform-apis/learning?content=62732&type=learning_material_item).
 * Get Access Token from EDP Authentication Endpoint.
 * Get specific ESG data like the basic score from the REST endpoint. 
 * Display data and plot a graph.
@@ -38,14 +38,14 @@ password=gp.getpass('Enter EDP Password:')
 
 __Get access token from authentication endpoint__
 
-The application sends HTTP post with required parameters according to the [EDP tutorial](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis/learning?content=38562&type=learning_material_item) to get the Access Token from EDP server.
+The application sends HTTP post with required parameters according to the [RDP tutorial](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning?content=62732&type=learning_material_item/learning?content=38562&type=learning_material_item) to get the Access Token from EDP server.
 
 ```python
 from json import dumps, loads, load
 from requests import post,get
 
 #Get access token from EDP server 
-getTokenEndpoint="https://api.refinitiv.com/auth/oauth2/beta1/token"
+getTokenEndpoint="https://api.refinitiv.com/auth/oauth2/v1/token"
 refreshToken=None
 accessToken=None
 _header= {}
@@ -309,10 +309,10 @@ You can change or modify Python codes in the notebook to displaying data from ot
 
 ## REFERENCES
 
-* [Elektron Data Platform Document](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis/docs)
-* [Elektron Data Platform Tutorial](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis/learning)
-* [ESG User Guide](https://developers.refinitiv.com/elektron-data-platform/elektron-data-platform-apis/docs?content=62652&type=documentation_item)
+* [Refinitiv Data Platform Document](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/docs)
+* [Refinitiv Data Platform Tutorial](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning)
+* [ESG User Guide](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/docs/docs?content=62652&type=documentation_item)
 
 ## DOWNLOADS
-* [ESGGraphPlot.ipynb on GitHub](https://github.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot)
+* [ESGGraphPlot.ipynb on GitHub](https://github.com/Refinitiv-API-Samples/Example.RDP.Python.ESGGraphPlot.git)
 * [![Azure Notebooks](https://notebooks.azure.com/launch.svg)](https://notebooks.azure.com/moragodkrit/projects/esggraphplot)
