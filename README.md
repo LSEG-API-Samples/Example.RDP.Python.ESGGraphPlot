@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Environmental, Social and Governance (ESG) is a set of standards for a company's operations that investors use to evaluate corporate behavior, determine the future financial performance and decide whether it will be beneficial to invest in a company or not. The ESG information from Refinitiv enables our clients to benchmark, compare and integrate extra-financial information into their investment processes to identify companies with quality management and reduced risk exposure. Please refer to the [ESG Learning Section](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning?content=62732&type=learning_material_item) on the [Developer Community](https://developers.refinitiv.com/) for more details about the ESG data and its coverage provided by Refinitiv.
+Environmental, Social and Governance (ESG) is a set of standards for a company's operations that investors use to evaluate corporate behavior, determine the future financial performance and decide whether it will be beneficial to invest in a company or not. The ESG information from Refinitiv enables our clients to benchmark, compare and integrate extra-financial information into their investment processes to identify companies with quality management and reduced risk exposure. Please refer to the [ESG Learning Section](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/quick-start#quickstart-guide-for-esg) on the [Developer Community](https://developers.refinitiv.com/) for more details about the ESG data and its coverage provided by Refinitiv.
 
-This example will demonstrate how we can retrieve [ESG data](https://developers.refinitiv.com/content/edp-esg-quick-start-video) from [Refinitiv Data Platform (RDP)](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning?content=62732&type=learning_material_item). We will be using Python with RDP API to request ESG data on the [Jupyter Notebook](https://jupyter.org/index.html). The notebook allows the user to create and share documents that contain live code, narrative text, visualizations and we can also plot the graph on the notebook.
+This example will demonstrate how we can retrieve [ESG data](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/quick-start#quickstart-guide-for-esg) from [Refinitiv Data Platform (RDP)](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/quick-start#quickstart-guide-for-refinitiv-data-platform). We will be using Python with RDP API to request ESG data on the [Jupyter Notebook](https://jupyter.org/index.html). The notebook allows the user to create and share documents that contain live code, narrative text, visualizations and we can also plot the graph on the notebook.
 
 The Jupyter Notebook with Python codes will be provided on GitHub.
 
@@ -17,7 +17,7 @@ The Jupyter Notebook with Python codes will be provided on GitHub.
 
 ## Implementation
 
-There are two main steps for the implementation according to [the tutorial](https://developers.refinitiv.com/RDP-data-platform/EDP-data-platform-apis/learning?content=62732&type=learning_material_item).
+There are two main steps for the implementation according to [the tutorial](https://docs.microsoft.com/en-us/azure/notebooks/quickstart-export-jupyter-notebook-project).
 * Get Access Token from RDP Authentication Endpoint.
 * Get specific ESG data like the basic score from the REST endpoint. 
 * Display data and plot a graph.
@@ -38,7 +38,7 @@ password=gp.getpass('Enter RDP Password:')
 
 __Get access token from authentication endpoint__
 
-The application sends HTTP post with required parameters according to the [RDP tutorial](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning?content=62732&type=learning_material_item/learning?content=38562&type=learning_material_item) to get the Access Token from RDP server.
+The application sends HTTP post with required parameters according to the [RDP tutorial](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/tutorials#introduction-to-the-request-response-api) to get the Access Token from RDP server.
 
 ```python
 from json import dumps, loads, load
@@ -309,9 +309,9 @@ You can change or modify Python codes in the notebook to displaying data from ot
 
 ## REFERENCES
 
-* [Refinitiv Data Platform Document](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/docs)
-* [Refinitiv Data Platform Tutorial](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/learning)
-* [ESG User Guide](https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-apis/docs/docs?content=62652&type=documentation_item)
+* [Refinitiv Data Platform Document](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation)
+* [Refinitiv Data Platform Tutorial](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/tutorials)
+* [ESG User Guide](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis/documentation#esg-data-guide)
 
 ## DOWNLOADS
 * [ESGGraphPlot.ipynb on GitHub](https://github.com/Refinitiv-API-Samples/Example.RDP.Python.ESGGraphPlot.git)
