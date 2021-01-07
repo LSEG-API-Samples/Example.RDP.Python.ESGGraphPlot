@@ -91,19 +91,19 @@ print("Access Token:",accessToken)
 In this example, we want to retrieve the ESG Score standard. The score standard operation returns all available scores for a company with three years of historical data. Application has to use the following Endpoint to retrieve the data.
 
 ```html
-https://api.refinitiv.com/data/environmental-social-governance/v1/views/scores-standard
+https://api.refinitiv.com/data/environmental-social-governance/v2/views/scores-standard
 ```
 There is an alternate option for a professional account to get ESG data with full score and it returns scores with full history. The user can use the following Endpoint instead.
 
 ```html
-https://api.refinitiv.com/data/environmental-social-governance/v1/views/scores-full
+https://api.refinitiv.com/data/environmental-social-governance/v2/views/scores-full
 ```
 The application has to send the server certain GET parameters through the requested endpoint/URL. In this case, it has to pass a universe as HTTP get parameters. The universe could be RIC name or ISIN or any other supported value.  
 The application needs to set a Bearer access token in the Authorization header of the HTTP request message. See below snippet of codes for the API usage to request full ESG score for the RIC MSFT.O.
 
 ```python
 ricList="MSFT.O"
-esgScoreFullEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v1/views/scores-full?universe="
+esgScoreFullEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v2/views/scores-full?universe="
 resp=get(url=esgScoreFullEndpoint+ricList,headers={"Authorization": "Bearer " + accessToken})
 
 if resp.status_code!=200:
@@ -186,7 +186,7 @@ Based on the details from RDP Swagger page,  we can get the data using basic sco
 
 ```python
 ricList="IBM,AMZN.O,MSFT.O,GOOGL.O,FB.O,APPL.O"
-esgฺBasicEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v1/views/basic?universe="
+esgฺBasicEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v2/views/basic?universe="
 resp=get(url=esgฺBasicEndpoint+ricList,headers={"Authorization": "Bearer " + accessToken})
 if resp.status_code!=200:
     print("Status Code:",resp.status_code," Text:",dumps(loads(resp.text),indent=4))
@@ -222,7 +222,7 @@ __Display Company Name__
 We have an additional requirement to display Company Name rather than using RIC codes. Basically, the data returned by the ESG basic score has only an Instrument name but it does not have a company named. Therefore, I need to create a function for getting the company name from ESG universe data. I found that the ESG universe endpoint can provide the company names that I want. I will use it later when I plot the graph. Anyway, we found that we can't find some RIC code using the universe Endpoint so it will return the original RIC name instead.
 
 ```python
-esgUniverseEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v1/universe"
+esgUniverseEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v2/universe"
 
 resp=get(url=esgUniverseEndpoint,headers={"Authorization": "Bearer " + accessToken})
 if resp.status_code!=200:
