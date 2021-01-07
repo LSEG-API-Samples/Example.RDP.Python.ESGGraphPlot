@@ -297,7 +297,7 @@ plt.set_xlabel('(tonnes)')
 It will shows the following horizontal bar chart on Jupyter Notebook.
 
 
-![Woman Manager Barh Chart](https://raw.githubusercontent.com/TR-API-Samples/Example.RDP.Python.ESGGraphPlot/master/images/barhwomanmanager.png)
+![Woman Manager Barh Chart](https://raw.githubusercontent.com/Refinitiv-API-Samples/Example.RDP.Python.ESGGraphPlot/master/images/barhwomanmanager.png)
 
 Base on the data, we do not have the report for IBM so it does not have the graph for IBM.
 
