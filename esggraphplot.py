@@ -8,7 +8,7 @@ from json import dumps, loads, load
 from requests import post,get
 
 #Get access token from EDP server 
-getTokenEndpoint="https://api.refinitiv.com/auth/oauth2/beta1/token"
+getTokenEndpoint="https://api.refinitiv.com/auth/v1/beta1/token"
 refreshToken=None
 accessToken=None
 _header= {}
@@ -45,7 +45,7 @@ else:
 print("Refresh Token:",refreshToken)
 print("Access Token:",accessToken)
 
-esgUniverseEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v1/universe"
+esgUniverseEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v2/universe"
 resp=get(url=esgUniverseEndpoint,headers={"Authorization": "Bearer " + accessToken})
 if resp.status_code!=200:
     print("Status Code:",resp.status_code," Text:",dumps(loads(resp.text),indent=4))
@@ -67,7 +67,7 @@ else:
     print("Unable to find name for MSFT.O")
 
 ricList="MSFT.O"
-esgScoreFullEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v1/views/scores-full?universe="
+esgScoreFullEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v2/views/scores-full?universe="
 resp=get(url=esgScoreFullEndpoint+ricList,headers={"Authorization": "Bearer " + accessToken})
 if resp.status_code!=200:
     print("Status Code:",resp.status_code," Text:",dumps(loads(resp.text),indent=4))
@@ -98,7 +98,7 @@ dataPlot.plot(x='Period End Date',y=['ESG Score','ESG Combined Score','Innovatio
 dataPlot.plot(x='Period End Date',y=['ESG Score','ESG Combined Score','Innovation Score'],kind='bar',figsize=(14,7))
 
 ricList="IBM,AMZN.O,MSFT.O,GOOGL.O,FB.O,APPL.O"
-esgฺBasicEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v1/views/basic?universe="
+esgฺBasicEndpoint="https://api.refinitiv.com/data/environmental-social-governance/v2/views/basic?universe="
 resp=get(url=esgฺBasicEndpoint+ricList,headers={"Authorization": "Bearer " + accessToken})
 if resp.status_code!=200:
     print("Status Code:",resp.status_code," Text:",dumps(loads(resp.text),indent=4))
