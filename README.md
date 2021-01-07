@@ -174,9 +174,9 @@ dataPlot.plot(x='Period End Date',y=['ESG Score','ESG Combined Score','Innovatio
 ```
 It will be displaying the following sample graphs on the Jupyter Notebook.
 
-![MSFT Score Line Graph](https://raw.githubusercontent.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot/master/images/linegraphmsft.png)
+![MSFT Score Line Graph](https://raw.githubusercontent.com/Refinitiv-API-Samples/Example.RDP.Python.ESGGraphPlot/master/images/linegraphmsft.png)
 
-![MSFT Score Bar Graph](https://raw.githubusercontent.com/TR-API-Samples/Example.EDP.Python.ESGGraphPlot/master/images/bargraphmsft.png)
+![MSFT Score Bar Graph](https://raw.githubusercontent.com/Refinitiv-API-Samples/Example.RDP.Python.ESGGraphPlot/master/images/bargraphmsft.png)
 
 ### Compare ESG Score for multiple universes
 
@@ -301,7 +301,7 @@ It will shows the following horizontal bar chart on Jupyter Notebook.
 
 Base on the data, we do not have the report for IBM so it does not have the graph for IBM.
 
-![CO2 Barh Chart](https://raw.githubusercontent.com/TR-API-Samples/Example.RDP.Python.ESGGraphPlot/master/images/barhco2.png)
+![CO2 Barh Chart](https://raw.githubusercontent.com/Refinitiv-API-Samples/Example.RDP.Python.ESGGraphPlot/master/images/barhco2.png)
 
 Based on the data, currently we do not have a CO2 report for Amazon.
 
