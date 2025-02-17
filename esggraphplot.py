@@ -1,8 +1,8 @@
 import getpass as gp
 
-username=input('Enter EDP username:')
+username=input('Enter RDP username:')
 clientid=input('Enter client id/app id:')
-password=gp.getpass('Enter EDP Password:')
+password=gp.getpass('Enter RDP Password:')
 
 from json import dumps, loads, load
 from requests import post,get
